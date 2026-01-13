@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q3 2nd Graded Exercise">
+    <meta name="keywords" content="HTML Forms">
+    <meta name="author" content="Lianne Gesite">
+    <title>Sample Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../styles.css" />
+    <script src="script.js" defer></script>
+   <style>
+
+    body{
+        padding: 25px;
+        font-family: arial;
+        width: 80%;
+        margin-left: 10%;
+        background-color: #fae4f4;
+    }
+
+        .title {
+            color: #000000;
+        }
+
+
+
+        fieldset:nth-child(2) {
+             margin-top: 20px;
+        }
+
+        legend {
+            background: black;
+            color: #d49cc5;
+            padding: 5px;
+        }
+        label {
+             margin: 5%;
+        }
+    </style>
+  </head>
+  <body>
+     <header>
+        <div>
+            <h1>
+                Sample Use of HTML Form    
+            </h1>
+            <h3>by Lianne Gesite </h3>
+        </div>
+        <nav class="navbar">
+            <a href="../../index.html"> Home </a>
+            <a href="registered.html"> Show Saved Accounts </a>
+        </nav>
+    </header>
+
+    <section>
+      <h1 class="title">Sign-up Page</h1>
+      <form id="dForm" action="registered.html" method="get">
+        <fieldset>
+          <legend>Your Credentials</legend><br/>
+
+          <label> StudentID: 
+            <input type="number" name="studentID" id="studentID" required />
+          </label><br/><br/>
+    
+          <label> Full Name: 
+            <input type="text" name="name" id="name" required />
+          </label><br/><br/>
+          
+          <label> Birthday:
+          <input type="date" name="dob" id="dob" />
+          </label><br/><br/>
+
+          <label> Email :
+            <input type="email" name="email" id="email" required />
+            </label><br/><br/>
+
+         <label> Mobile Number: 
+            <input type="tel" name="mobile" id="mobile" required />
+            </label><br/><br/>
+
+         <label> Grade Level:
+            <select id="gradelvl" name="gradelvl">
+              <option value="7">Grade 7</option>
+              <option value="8">Grade 8</option>
+              <option value="9">Grade 9</option>
+              <option value="10">Grade 10</option>
+              <option value="11">Grade 11</option>
+              <option value="12">Grade 12</option>
+            </label></select><br/><br/>
+
+            <label> Intern/Extern:
+                <input type="radio" name="intern/extern" value="Intern" /> Intern
+                <input type="radio" name="intern/extern" value="Extern" /> Extern
+              </label><br/><br/>
+
+         <label> Preferred Organization / Club:
+             <select id="club" name="club">
+              <option value="kislap">Kislap</option>
+              <option value="MUN">MUN</option>
+              <option value="sightlines">Sightlines</option>
+              <option value="Likha">Likha</option>
+              <option value="Volant">Volant</option>
+                </label></select><br/><br/>
+
+          <label> Why do you want to join: 
+            <textarea name="about" id="about">
+              
+            </textarea>
+          </label><br/><br/>
+          
+          
+        </fieldset>  
+        <fieldset>
+          <legend>Action Buttons</legend>
+          <button type="submit"> Submit </button>
+          <input type="reset" value=" Clear " />
+        </fieldset> 
+
+      </form>
+    </section>
+  </body>
+</html>
