@@ -61,20 +61,24 @@
           <legend>Your Credentials</legend><br/>
 
           <label> StudentID: 
-            <input type="number" name="studentID" id="studentID" required />
+            <input  onfocus="changeColor(this)" onblur="resetColor(this)" type="number" name="studentID" id="studentID" required />
           </label><br/><br/>
     
           <label> Full Name: 
-            <input type="text" name="name" id="name" required />
+            <input onfocus="changeColor(this)" onblur="resetColor(this)" type="text" name="name" id="name" required />
           </label><br/><br/>
           
           <label> Birthday:
-          <input type="date" name="dob" id="dob" />
+          <input onfocus="changeColor(this)" onblur="resetColor(this)" type="date" name="dob" id="dob" />
           </label><br/><br/>
 
           <label> Email :
-            <input type="email" name="email" id="email" required />
+            <input onfocus="changeColor(this)" onblur="resetColor(this)" type="email" name="email" id="email" required />
             </label><br/><br/>
+</fieldset>
+
+<fieldset> 
+    <legend>Additional Information</legend><br/>
 
          <label> Mobile Number: 
             <input type="tel" name="mobile" id="mobile" required />
@@ -111,14 +115,15 @@
           </label><br/><br/>
           
           
-        </fieldset>  
-        <fieldset>
-          <legend>Action Buttons</legend>
-          <button type="submit"> Submit </button>
-          <input type="reset" value=" Clear " />
         </fieldset> 
 
+        <fieldset>
+          <legend>Action Buttons</legend>
+          <button type="submit"> Accept </button>
+          <input type="reset" value=" Clear " />
+        </fieldset> 
       </form>
     </section>
+    <script src="3Q3BerylliumGesite.js"></script>
   </body>
 </html>
