@@ -8,8 +8,8 @@
     <meta name="author" content="Lianne Gesite">
     <title>Sample Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="3Q3BerylliumGesite.js" defer> </script>
    <style>
 
     body{
@@ -17,51 +17,49 @@
         font-family: arial;
         width: 80%;
         margin-left: 10%;
-        background-color: #fae4f4;
-    }
+        background-color: #f4e1d2;
+      }
 
         .title {
             color: #000000;
         }
-
-
 
         fieldset:nth-child(2) {
              margin-top: 20px;
         }
 
         legend {
-            background: black;
-            color: #d49cc5;
+            background: #8b5e3c;
+            color: #ffffff;
             padding: 5px;
         }
+
         label {
              margin: 5%;
         }
     </style>
   </head>
+
+
   <body>
      <header>
         <div>
-            <h1>
-                Sample Use of HTML Form    
-            </h1>
-            <h3>by Lianne Gesite </h3>
+            <h1>Sample Use of HTML Form</h1>
+            <h3>by Lianne Gesite</h3>
         </div>
         <nav class="navbar">
             <a href="../../index.html"> Home </a>
-            <a href="registered.html"> Show Saved Accounts </a>
+            <a href="viewSignUps.html"> Show Saved Accounts </a>
         </nav>
     </header>
 
     <section>
       <h1 class="title">Sign-up Page</h1>
-      <form id="dForm" action="registered.html" method="get">
+      <form id="dForm" method="get">
         <fieldset>
           <legend>Your Credentials</legend><br/>
-
           <label> StudentID: 
-            <input  onfocus="changeColor(this)" onblur="resetColor(this)" type="number" name="studentID" id="studentID" required />
+            <input onfocus="changeColor(this)" onblur="resetColor(this)" type="number" name="studentID" id="studentID" required />
           </label><br/><br/>
     
           <label> Full Name: 
@@ -69,59 +67,56 @@
           </label><br/><br/>
           
           <label> Birthday:
-          <input onfocus="changeColor(this)" onblur="resetColor(this)" type="date" name="dob" id="dob" />
+          <input onfocus="changeColor(this)" onblur="resetColor(this)" type="date" name="dob" id="dob" required />
           </label><br/><br/>
 
           <label> Email :
             <input onfocus="changeColor(this)" onblur="resetColor(this)" type="email" name="email" id="email" required />
-            </label><br/><br/>
-</fieldset>
+          </label><br/><br/>
+        </fieldset>
 
-<fieldset> 
-    <legend>Additional Information</legend><br/>
-
-         <label> Mobile Number: 
+        <fieldset> 
+          <legend>Additional Information</legend><br/>
+          <label> Mobile Number: 
             <input type="tel" name="mobile" id="mobile" required />
-            </label><br/><br/>
+          </label><br/><br/>
 
-         <label> Grade Level:
-            <select id="gradelvl" name="gradelvl">
+          <label> Grade Level:
+            <select id="gradelvl" name="gradelvl" required>
               <option value="7">Grade 7</option>
               <option value="8">Grade 8</option>
               <option value="9">Grade 9</option>
               <option value="10">Grade 10</option>
               <option value="11">Grade 11</option>
               <option value="12">Grade 12</option>
-            </label></select><br/><br/>
+            </select> </label><br/><br/>
 
-            <label> Intern/Extern:
-                <input type="radio" name="intern/extern" value="Intern" /> Intern
-                <input type="radio" name="intern/extern" value="Extern" /> Extern
-              </label><br/><br/>
+          <label> Intern/Extern:
+            <input type="radio" name="intern/extern" value="Intern" required /> Intern
+            <input type="radio" name="intern/extern" value="Extern" required /> Extern
+          </label><br/><br/>
 
-         <label> Preferred Organization / Club:
-             <select id="club" name="club">
+          <label> Preferred Organization / Club:
+            <select id="club" name="club" required>
               <option value="kislap">Kislap</option>
               <option value="MUN">MUN</option>
               <option value="sightlines">Sightlines</option>
               <option value="Likha">Likha</option>
               <option value="Volant">Volant</option>
-                </label></select><br/><br/>
+            </select> </label><br/><br/>
 
           <label> Why do you want to join: 
-            <textarea name="about" id="about">
-              
-            </textarea>
+            <textarea name="about" id="about" required ></textarea>
           </label><br/><br/>
-          
-          
         </fieldset> 
 
         <fieldset>
           <legend>Action Buttons</legend>
           <button type="submit"> Accept </button>
-          <input type="reset" value=" Clear " />
+          <input type="reset" id="Clear" value=" Clear " />
+          <button type="button" onclick="window.location.href='viewSignUps.html'">View Signups</button>
         </fieldset> 
+        
       </form>
     </section>
     <script src="3Q3BerylliumGesite.js"></script>
