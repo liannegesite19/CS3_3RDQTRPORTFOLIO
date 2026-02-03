@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show List of Students Who Signed-Up</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Show List of Students Who Signed-Up</h1>
+        <h3>by Lianne Gesite</h3>
+        <nav class="navbar">
+            <a href="../../index.html"> Home </a> | 
+            <a href="3Q3BerylliumGesite.html"> Back to Signup </a>
+        </nav>
+    </header>
+
+    <section>
+        <br>
+        <label>Select Your Club </label>
+        <select id="clubFilter" onchange="displayData()">
+            <option value="ALL">-- select an option --</option>
+            <option value="kislap">Kislap</option>
+            <option value="MUN">MUN</option>
+            <option value="sightlines">Sightlines</option>
+            <option value="Likha">Likha</option>
+            <option value="Volant">Volant</option>
+        </select>
+
+        <p>Total Signup : <span id="totalCount">0</span></p>
+
+        <div id="displayArea">
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Club</th>
+                        <th>ID</th>
+                        <th>Fullname</th>
+                        <th>Grade</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Intern|Extern</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        function displayData() {
+            const acctString = localStorage.getItem("accounts");
+            const tableBody = document.getElementById("tableBody");
+            const totalCount = document.getElementById("totalCount");
+            const filterValue = document.getElementById("clubFilter").value;
+            const displayArea = document.getElementById("displayArea");
+
+            if (!acctString) {
+                displayArea.innerHTML = "<p class='no-data'>No Accounts Found in LocalStorage.</p>";
+                totalCount.innerText = "0";
+                return;
+            }
+
+            const accountList = JSON.parse(acctString);
+            
+            let filteredData = (filterValue === "ALL" || filterValue === "-- select an option --") 
+                ? accountList 
+                : accountList.filter(acc => acc.club === filterValue);
+
+           
+            totalCount.innerText = filteredData.length;
+
+            
+            tableBody.innerHTML = "";
+            
+            if (filteredData.length === 0) {
+                
+                tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center;">No Sign Ups for the club "${filterValue}"</td></tr>`;
+            } else {
+                filteredData.forEach(acc => {
+                    let row = `<tr>
+                        <td>${acc.club}</td>
+                        <td>${acc.studentID}</td>
+                        <td>${acc.name}</td>
+                        <td>Grade ${acc.gradelvl}</td>
+                        <td>${acc.email}</td>
+                        <td>${acc.mobile}</td>
+                        <td>${acc['intern/extern'] || 'N/A'}</td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            }
+        }
+
+    
+        window.onload = displayData;
+    </script>
+</body>
+</html>
