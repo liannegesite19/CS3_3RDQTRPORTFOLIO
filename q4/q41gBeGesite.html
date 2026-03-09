@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q4 1st Graded Exercise">
+    <meta name="keywords" content="Movie Rating">
+    <meta name="author" content="Lianne Gesite">
+    <title>Movie Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #8b5e3c;
+            padding: 20px;
+            color: #333;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        h2, h3 { color: #f5f5f6; text-shadow: 1px 1px 2px #000; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+
+        #movieForm {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse; 
+            justify-content: flex-end;
+            gap: 5px;
+        }
+
+        .star-rating input { display: none; }
+
+        .star-rating label {
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        /* Highlight stars when radio is checked */
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #f1c40f; /* Yellow/Gold */
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover { background-color: #219150; }
+
+        #movieDisplay { margin-top: 20px; }
+
+        .movie-card {
+            background: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #27ae60;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .display-star { color: #f1c40f; font-size: 18px; }
+        .empty-star { color: #ddd; font-size: 18px; }
+    </style>
+
+</head>
+<body>
+
+    <h2>Add New Movie</h2>
+    <form id="movieForm">
+        <input type="text" id="movieTitle" placeholder="Movie Title" required>
+        
+        <select id="movieGenre">
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+        </select>
+
+        <div class="star-rating">
+            <input type="radio" name="rating" value="5" id="5"><label for="5">★</label>
+            <input type="radio" name="rating" value="4" id="4"><label for="4">★</label>
+            <input type="radio" name="rating" value="3" id="3"><label for="3">★</label>
+            <input type="radio" name="rating" value="2" id="2"><label for="2">★</label>
+            <input type="radio" name="rating" value="1" id="1"><label for="1">★</label>
+        </div>
+
+        <button type="submit">Add Movie</button>
+    </form>
+
+    <hr>
+    <h3>Movie List</h3>
+    <div id="movieDisplay"></div>
+
+    <script src="q41gBeGesite.js"></script>
+</body>
+</html>
