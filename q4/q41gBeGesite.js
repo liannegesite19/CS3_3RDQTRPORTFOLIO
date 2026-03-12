@@ -22,7 +22,7 @@ movieForm.addEventListener('submit', (e) => {
         movies[existingMovieIndex] = {
             title: title, 
             genre: genre,
-            rating: averagedRating.toFixed(1) + ' stars'
+            rating: averagedRating.toFixed(1) 
         };
     } else {
         movies.push({ title, genre, rating });
