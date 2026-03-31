@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Lianne Gesite">
+  <meta name="description" content="testing and debugging">
+  <meta name="keywords" content="testing and debugging">
+  <title>CS3 - Error Logs</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <style>
+    tr:nth-child(1) ~ tr:nth-child(odd) {
+      background-color: lightgray;
+      color: black;
+    }
+    td, th {
+      padding: 10px;
+      border: 1px solid #333;
+    }
+    table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    caption {
+      font-size: 2em;
+      font-weight: bold;
+      padding: 10px;
+    }
+    .rColor {
+      background-color: navy;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html#start">Table</a>
+      <a href="index.html#input">Input</a>
+      <a href="index.html#output">Output</a>
+    </nav>
+    
+    <h1 style="padding: 30px">Lianne Gesite/Beryllium - Mar 2026 </h1>
+  </header>
+
+  <section id="table">
+    <table> 
+      <caption> Error Logs - place errors found in the table below</caption>
+      <tr class="rColor">
+        <th> item# </th> 
+        <th> code line#<br/>CSS or JS </th> 
+        <th> Description</th>
+        <th> Correction Done</th>
+      </tr>
+      <tr>
+        <td> 1 </td> 
+        <td> JS Line 1 </td> 
+        <td> Function parameters (x0, y0, x, y) were missing. </td>
+        <td> Added variables inside the plotPoint function parentheses. </td>
+      </tr>
+      <tr>
+        <td> 2 </td> 
+        <td> JS Line 7 </td> 
+        <td> Invalid style property 'styleleft' used. </td>
+        <td> Changed to 'point.style.left' to correctly access CSS. </td>
+      </tr>
+      <tr>
+        <td> 3 </td> 
+        <td> JS Line 8 </td> 
+        <td> Invalid style property 'stylebottom' used. </td>
+        <td> Changed to 'point.style.bottom' to correctly access CSS. </td>
+      </tr>
+      <tr>
+        <td> 4 </td> 
+        <td> CSS (Point) </td> 
+        <td> Red dot (.point) was missing absolute positioning. </td>
+        <td> Added 'position: absolute' so the dot can move on the plane. </td>
+      </tr>
+      <tr>
+        <td> 5 </td> 
+        <td> CSS (Plane) </td> 
+        <td> Coordinate Plane was missing relative positioning. </td>
+        <td> Added 'position: relative' to act as an anchor for the point. </td>
+      </tr>
+      <tr>
+        <td> 6 </td> 
+        <td> CSS (Nav) </td> 
+        <td> Navigation bar was not fixed to the top of the browser. </td>
+        <td> Added 'position: fixed' and 'top: 0' to the nav selector. </td>
+      </tr>
+      <tr>
+        <td> 7 </td> 
+        <td> CSS (Nav A) </td> 
+        <td> Navigation links were stacked vertically. </td>
+        <td> Applied 'display: flex' to the nav container to align them. </td>
+      </tr>
+      <tr>
+        <td> 8 </td> 
+        <td> HTML Line 97 </td> 
+        <td> Script source path/filename mismatch. </td>
+        <td> Updated src attribute to match the actual .js filename. </td>
+      </tr>
+      <tr>
+        <td> 9 </td> 
+        <td> HTML Line 6 </td> 
+        <td> Meta author and Title contained placeholder names. </td>
+        <td> Updated with actual student name and section. </td>
+      </tr>
+      <tr>
+        <td> 10 </td> 
+        <td> CSS (Sprites) </td> 
+        <td> Image sprites path and hover positions were incorrect. </td>
+        <td> Updated background-image path and fixed hover coordinates. </td>
+      </tr>
+    </table>
+    <hr>
+  </section>
+  
+  <footer>
+    <a href="https://facebook.com"> 
+    <div class="icon facebook"></div>
+    </a>
+    <a href="https://twitter.com">
+    <div class="icon twitter"></div>
+    </a>
+    <a href="https://github.com">
+    <div class="icon github"></div>
+    </a>
+  </footer>
+ 
+</body>
+</html>
